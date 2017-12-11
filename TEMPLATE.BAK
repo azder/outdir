@@ -1,0 +1,13 @@
+template<class T,class T2> f(T2 a,T b){
+	cout<<a<<' '<<b<<'\n';
+	return a>(T2)b?a:b;
+
+}
+template<class T> f(T a,T b){
+	return a>b?a:b;
+
+}
+#include <iostream.h>
+void main(){
+	cout<<f(53.5,5)<<endl;
+}

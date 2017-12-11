@@ -1,0 +1,89 @@
+#include<iostream.h>
+#include<math.h>
+#include<conio.h>
+#define N 10
+class mat
+{
+
+	public:
+	int m,n;
+	int a[N][N];
+	mat()
+	{
+				m=n=0;
+/*				for(int i=0;i<m;i++)
+								for(int j=0;j<n;j++)
+//                        c.a[i][j]=0;
+												a[i][j]=0;*/
+	}
+	~mat(){}
+	void vnesi()
+	{
+				int m1,n1;
+				cout<<"Kolku redici imaat matricite?";
+				cin>>m1;
+				m=m1;
+				cout<<"Kolku koloni imaat matricite?";
+				cin>>n1;
+				n=n1;
+				for(int i=0;i<m;i++)
+								for(int j=0;j<n;j++)
+								{
+												cout<<"a["<<i+1<<","<<j+1<<"]=";
+												cin>>a[i][j];
+                }
+  }
+  void pecati()
+  {
+    for(int i=0;i<m;i++)
+    {
+        for(int j=0;j<n;j++)
+                cout<<a[i][j]<<" ";
+        cout<<endl;
+    }
+  }
+  mat operator+(mat);
+  mat operator-(mat);
+  mat operator=(mat);
+  mat operator*(mat);
+};
+
+mat mat::operator+(mat b)
+{
+	 mat c;
+//	 if(m!=b.m || n!=b.n) return c;
+	 c.m=b.m;
+	 c.n=b.n;
+	 for(int i=0;i<c.m;i++)
+				for(int j=0;j<c.n;j++)
+							 c.a[i][j]=a[i][j]+b.a[i][j];
+		return c;
+}
+mat mat::operator=(mat b)
+{
+//	 mat c;
+	m=b.m;
+	n=b.n;
+	 for(int i=0;i<m;i++)
+				for(int j=0;j<n;j++)
+								a[i][j]=b.a[i][j];
+	 return *this;
+}
+main()
+{
+	clrscr();
+	mat x,y,z;
+	x.vnesi();
+	y.vnesi();
+	x.pecati();
+	y.pecati();
+	z=(x+y);
+	z.pecati();
+	getch();
+}
+
+
+
+
+
+//---------------------------------------------------------------------------

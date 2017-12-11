@@ -1,0 +1,6 @@
+#include <iostream.h>
+#define N 100
+int a[N]={0};
+void main(){
+
+}

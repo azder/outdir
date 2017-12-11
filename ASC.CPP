@@ -1,0 +1,11 @@
+#include <iostream.h>
+#include <conio.h>
+void main()
+{
+char i;
+clrscr();
+for (i=0;i<256;i++){
+	if (i==7 || i==26 ) continue;
+	cout <<(int)i<<" "<<i<<"   ";
+}
+}

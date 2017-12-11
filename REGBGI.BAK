@@ -1,0 +1,27 @@
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
+void main(){
+	 int gdriver = DETECT, gmode, errorcode;
+	 errorcode = registerbgidriver(EGAVGA_driver);
+	 if (errorcode < 0){
+			printf("Graphics error: %s\n", grapherrormsg(errorcode));
+			printf("Press any key to halt:");
+			getch();
+			exit(1); /* terminate with an error code */
+	 }
+	 initgraph(&gdriver, &gmode, "");
+	 errorcode = graphresult();
+	 if (errorcode != grOk){
+			printf("Graphics error: %s\n", grapherrormsg(errorcode));
+			printf("Press any key to halt:");
+			getch();
+			exit(1); /* terminate with an error code */
+	 }
+	 line(0, 0, getmaxx(), getmaxy());
+	 getch();
+   closegraph();
+   return 0;
+}
+
